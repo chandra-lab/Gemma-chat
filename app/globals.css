@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode (toggled by adding `dark` to <html>). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light dark;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-neutral-50 text-neutral-900 antialiased;
+}
+
+.dark body {
+  @apply bg-neutral-950 text-neutral-100;
+}
+
+/* Make highlighted code blocks sit nicely inside our bubbles. */
+.hljs {
+  @apply rounded-lg;
+  padding: 1rem !important;
+  background: #0d1117 !important;
+}
+
+/* Thin, subtle scrollbars. */
+* {
+  scrollbar-width: thin;
+}

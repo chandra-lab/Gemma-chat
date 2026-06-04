@@ -1,0 +1,6 @@
+FROM gemma4:e2b
+# Force CPU-only inference. On GPUs too small to hold the full model (e.g. a 4 GB
+# card vs this ~7.2 GB model), Ollama splits layers across GPU+CPU, which overflows
+# ggml's GGML_SCHED_MAX_SPLIT_INPUTS limit and crashes llama-server. num_gpu 0 keeps
+# every layer on one backend and avoids the crash.
+PARAMETER num_gpu 0

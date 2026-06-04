@@ -1,0 +1,22 @@
+{
+  "name": "gemma-chat",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Gemma Chat",
+      "onAutoForward": "notify"
+    }
+  },
+  "containerEnv": {
+    "MODEL_PROVIDER": "google",
+    "MODEL_NAME": "gemma-4-31b-it",
+    "NEXT_PUBLIC_ENABLE_AUDIO": "false"
+  },
+  "postCreateCommand": "npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+    }
+  }
+}
